@@ -7,7 +7,10 @@ loadPhotos();
 function showPhotos(photo) {
     const photoSection = document.getElementById("photo-section");
     for (const photos of photo) {
-        const img = document.createElement('img');
+        // console.log(photos);
+        const img = document.getElementById("image");
+        img.src = photos.url;
+        photoSection.appendChild(img);
 
 
     }
