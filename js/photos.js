@@ -4,13 +4,14 @@ function loadPhotos() {
         .then(data => showPhotos(data))
 }
 loadPhotos();
-function showPhotos(photo) {
+function showPhotos(photos) {
     const photoSection = document.getElementById("photo-section");
-    for (const photos of photo) {
+    for (const photo of photos) {
+        console.log(photo);
         // console.log(photos);
-        const img = document.getElementById("image");
-        img.src = photos.url;
-        photoSection.appendChild(img);
+        const image = document.createElement('img');
+        image.src = `${photo.url}`
+        photoSection.appendChild(image);
 
 
     }
